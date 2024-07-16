@@ -56,35 +56,30 @@ Task API group has 5 api as below -
 - Get All User Task - This api can be used to fetch all the task related to the logged-in user.
 
 
-## Sorting the Task List
+### Sorting the Task List
 `Get All User Task` api support the sorting functionality by field/column name. Below is an example of sorting the tasks by title in descending order.
 ```bash
 http://127.0.0.1:8000/tasks?sort=title:asc
 ```
 
-## Searing the Matching Task
+### Searing the Matching Task
 `Get All User Task` api support the search functionality. At the moment it support searching only in title column but this can extended to other columns too. Below is an example of search.
 ```bash
 http://127.0.0.1:8000/tasks?q=pesto
 ```
 
 
-## Filtering the Task
+### Filtering the Task
 `Get All User Task` api support the filtering functionality by status. Below is an example of filter.
 ```bash
 http://127.0.0.1:8000/tasks?status=Done
 ```
 
 
-## Searching, Sorting & Filtering Together
+### Searching, Sorting & Filtering Together
 ```bash
 http://127.0.0.1:8000/tasks?q=pesto&status=Done&sort=titme:asc
 ```
-
-
-### Notes
-- This project also includes the email functionality and can send email when user account is created, forgot password request etc. But at the moment is disabled/commented.
-- Since email functionality is disabled, a new user account is activated by default.
 
 
 # Additional Things
@@ -124,4 +119,7 @@ docker-compose run fastapi-service /bin/sh -c "pytest tests/test_folder/test_fil
 
 
 # Notes
-Please use the Swagger to check the API related details. Thanks.
+- This project also includes the email functionality and can send email when user account is created, forgot password request etc. But at the moment is disabled/commented.
+- Since email functionality is disabled, a new user account is activated by default.
+- Please use the Swagger to check the API related details. 
+- Thanks.
