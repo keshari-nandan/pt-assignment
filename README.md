@@ -121,5 +121,14 @@ docker-compose run fastapi-service /bin/sh -c "pytest tests/test_folder/test_fil
 # Notes
 - This project also includes the email functionality and can send email when user account is created, forgot password request etc. But at the moment is disabled/commented.
 - Since email functionality is disabled, a new user account is activated by default.
-- Please use the Swagger to check the API related details. 
-- Thanks.
+- Please use the Swagger to check the API related details.
+
+
+# Improvement
+- Include ``/api`` in the url.
+- Enable email service by integrating the mailpit as smtp local provider.
+- Add cors into the project before shipping this to live.
+
+
+
+#### Thanks.
