@@ -26,14 +26,15 @@ async def create_user_account(data, session, background_tasks):
     user.name = data.name
     user.email = data.email
     user.password = hash_password(data.password)
-    user.is_active = False
-    user.updated_at = datetime.utcnow()
+    user.is_active = True  # Change this to False when email functionality is enabled
+    user.verified_at = datetime.now()  # Remove this field when email functionality is enabled
+    user.updated_at = datetime.now()
     session.add(user)
     session.commit()
     session.refresh(user)
 
     # Account Verification Email
-    await send_account_verification_email(user, background_tasks=background_tasks)
+    # await send_account_verification_email(user, background_tasks=background_tasks)
     return user
 
 
@@ -58,7 +59,7 @@ async def activate_user_account(data, session, background_tasks):
     session.commit()
     session.refresh(user)
     # Activation confirmation email
-    await send_account_activation_confirmation_email(user, background_tasks)
+    # await send_account_activation_confirmation_email(user, background_tasks)
     return user
 
 
