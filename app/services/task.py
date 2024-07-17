@@ -75,5 +75,5 @@ async def get_all_tasks(auth, request, session):
                 column = order = None
             if column:
                 order = order if order == 'asc' else order == 'desc'
-                query = query.order_by(column.desc()) if order == 'asc' else query.order_by(column.asc())
+                query = query.order_by(column.desc()) if order == 'desc' else query.order_by(column.asc())
     return query.all()
